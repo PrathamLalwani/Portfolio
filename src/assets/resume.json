@@ -1,0 +1,37 @@
+{
+  "Experience": [
+    {
+      "company": "UNBC",
+      "title": "Research Assistant",
+      "duration": "April 2023 - Present",
+      "description": "I am currently working with Dr. Andy Wan to find numerical solutions to systems which were previously unsolvable. We are creating a class of methods to improve the accuracy and preserve structure of the system to observe."
+    },
+    {
+      "company": "UNBC",
+      "title": "Graduate Teaching Assistant",
+      "duration": "September 2022 - April 2023",
+      "description": "Ran tutorial session for CALC-I. Marked assignments and exams. Held office hours to help students with questions."
+    }
+  ],
+  "Technologies": [
+    { "name": "React", "icon_pth": "assets/techicons/React.svg" },
+    { "name": "NodeJS", "icon_pth": "assets/techicons/Node.js.svg" },
+    { "name": "Express", "icon_pth": "assets/techicons/Express.svg" },
+    { "name": "MongoDB", "icon_pth": "assets/techicons/" },
+    { "name": "Python", "icon_pth": "assets/techicons/" },
+    { "name": "C", "icon_pth": "assets/techicons/" },
+    { "name": "Java", "icon_pth": "assets/techicons/" },
+    { "name": "HTML5", "icon_pth": "assets/techicons/" },
+    { "name": "CSS3", "icon_pth": "assets/techicons/" },
+    { "name": "JavaScript", "icon_pth": "assets/techicons/" },
+    { "name": "Git", "icon_pth": "assets/techicons/" },
+    { "name": "GitHub", "icon_pth": "assets/techicons/" },
+    { "name": "Heroku", "icon_pth": "assets/techicons/" },
+    { "name": "Netlify", "icon_pth": "assets/techicons/" },
+    { "name": "AWS", "icon_pth": "assets/techicons/" },
+    { "name": "Docker", "icon_pth": "assets/techicons/" },
+    { "name": "Linux", "icon_pth": "assets/techicons/" },
+    { "name": "Windows", "icon_pth": "assets/techicons/" },
+    { "name": "LaTeX", "icon_pth": "assets/techicons/" }
+  ]
+}
