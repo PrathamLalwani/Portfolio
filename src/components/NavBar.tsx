@@ -24,7 +24,9 @@ const NavBar: React.FC = () => {
 
   // on click of the menu icon, show the nav items
   const onMenuClickHandler = () => {
-    toggleShowNavItems();
+    if (window.innerWidth < 768) {
+      toggleShowNavItems();
+    }
   };
 
   return (
@@ -39,7 +41,7 @@ const NavBar: React.FC = () => {
       <ul
         className={`absolute ${
           showNavItems
-            ? "bg-background/80 left-0 top-0 flex items-center p-10 text-2xl"
+            ? "left-0 top-0 flex items-center bg-background/80 p-10 text-2xl"
             : "hidden"
         }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
       >

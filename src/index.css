@@ -164,10 +164,10 @@
   }
   .link-active {
     @apply text-primary;
-    background-image: linear-gradient(var(--primary), var(--primary));
-    background-size: 0% 1.5px;
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    /* background-image: linear-gradient(var(--primary), var(--primary)); */
+    /* background-size: 0% 1.5px; */
+    /* background-repeat: no-repeat; */
+    /* background-position: center bottom; */
     cursor: pointer;
 
     background-size: 100% 2.5px;

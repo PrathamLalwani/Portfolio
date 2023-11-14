@@ -40,6 +40,7 @@ const Project = (props: Props) => {
             >
               {
                 <SvgIcon
+                  key={tech}
                   iconName={tech}
                   size={0}
                   className=" h-5 w-5 fill-text sm:h-6 sm:w-6"
