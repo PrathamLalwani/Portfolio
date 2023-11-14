@@ -44,11 +44,10 @@ const Contact = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         return data;
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }
 
@@ -73,9 +72,7 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     JSON.stringify(formInput);
-    console.log(formInput);
-    const response = await postData();
-    console.log(response);
+    await postData();
     alert("Thank you for your message. I will get back to you soon!");
     dispatch({ type: "EMAIL", payload: "" });
     dispatch({ type: "NAME", payload: "" });
@@ -90,9 +87,9 @@ const Contact = () => {
         </h2>
         <div className="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
           <p className="mb-8 text-center text-text  sm:text-xl lg:mb-16">
-            Fill out the contact form to start a conversation with me. I am open
-            to hearing about new opportunities, discussing potential projects,
-            or answering any questions you might have.
+            Fill out the contact form to start a conversation with me. Keen to
+            hear about new opportunities, discuss potential projects, or answer
+            any questions you might have.
           </p>
           <form action="#" onSubmit={handleSubmit} className="space-y-8">
             <div>
@@ -106,7 +103,7 @@ const Contact = () => {
                 type="text"
                 id="name"
                 className=":border-primary-500 :ring-primary-500 block w-full rounded-lg border border-primary-200 bg-background-100 p-3 text-sm text-text shadow-sm outline-none    focus:border-primary-500 focus:ring-primary-500"
-                placeholder="Jon Doe"
+                placeholder="John Doe"
                 onChange={handleNameChange}
                 value={formInput.name}
                 required

@@ -4,13 +4,23 @@
       "company": "UNBC",
       "title": "Research Assistant",
       "duration": "April 2023 - Present",
-      "description": "I am currently working with Dr. Andy Wan to find numerical solutions to systems which were previously unsolvable. We are creating a class of methods to improve the accuracy and preserve structure of the system to observe."
+      "description": "Currently working with Dr. Andy Wan to find numerical solutions to systems which were previously unsolvable. Constructed a class of methods to improve the accuracy and preserve structure of the system to observe."
     },
     {
       "company": "UNBC",
       "title": "Graduate Teaching Assistant",
       "duration": "September 2022 - April 2023",
       "description": "Ran tutorial session for CALC-I. Marked assignments and exams. Held office hours to help students with questions."
+    }
+  ],
+  "Project": [
+    {
+      "projectName": "Portfolio Page",
+      "description": "Created my portfolio website using React, Node.js, AWS and Tailwind CSS",
+      "techStack": ["React", "Node.js", "AWS", "Tailwind-CSS"],
+      "githubLink": "https://github.com/PrathamLalwani/Portfolio",
+      "liveLink": "https://prathamlalwani.me/",
+      "img_path": "Portfolio.png"
     }
   ],
   "Technologies": [

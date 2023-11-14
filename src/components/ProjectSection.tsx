@@ -1,5 +1,6 @@
 import Project from "./Project";
 import { Element } from "react-scroll";
+import { Project as ProjectData } from "../assets/resume.json";
 // type Props = { children?: React.ReactNode };
 
 const ProjectSection = () => {
@@ -7,13 +8,19 @@ const ProjectSection = () => {
     <Element name="Projects">
       <section>
         <h2 className="mb-3 text-5xl font-bold text-text">Projects</h2>
-        <Project
-          projectName="Lorem ipsum"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum."
-          techStack={["React", "Node.js", "Express", "JavaScript", "TypeScript", "AWS"]}
-          githubLink="test.com"
-          liveLink="test.com"
-        ></Project>
+        {ProjectData.map((project) => {
+          return (
+            <Project
+              key={project.projectName}
+              img_path={project.img_path}
+              projectName={project.projectName}
+              description={project.description}
+              techStack={project.techStack}
+              githubLink={project.githubLink}
+              liveLink={project.liveLink}
+            ></Project>
+          );
+        })}
       </section>
     </Element>
   );

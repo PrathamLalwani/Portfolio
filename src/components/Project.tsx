@@ -4,23 +4,31 @@ import React from "react";
 import SvgIcon from "./SvgIcon";
 type Props = {
   children?: React.ReactNode;
+  img_path: string;
   projectName: string;
   description: string;
   techStack: string[];
   githubLink: string;
-  liveLink: string;
+  liveLink?: string;
 };
 
 const Project = (props: Props) => {
+  const getImgUrl = (name: string) =>
+    new URL(`../assets/ProjectPictures/${name}`, import.meta.url).href;
+
   return (
     <div className="flex h-fit w-fit flex-col items-center rounded-md bg-background-50 px-3 py-5 transition-all ease-in-out hover:shadow-2xl hover:shadow-accent sm:p-5 md:items-start">
-      <div className="h-52 w-52 shrink-0 rounded-md bg-blue-500 sm:h-64 sm:w-64 md:h-96 md:w-96 "></div>
+      <div className="h-52 w-52 shrink-0 rounded-md sm:h-64 sm:w-64 md:h-96 md:w-96 ">
+        <img
+          src={getImgUrl(props.img_path)}
+          alt={props.projectName}
+          className="h-full w-full rounded-md bg-center object-cover"
+        />
+      </div>
       <div className="flex w-52 flex-col sm:w-64 md:w-96">
         <h4 className="my-2 text-xl text-primary">{props.projectName}</h4>
         <p className="py-2 text-sm text-text sm:text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab officiis
-          veniam dolores laborum sapiente eaque voluptatem, odio dignissimos
-          vero quos reiciendis, rem culpa harum nesciunt?
+          {props.description}
         </p>
         <h5 className="text-l text-primary">Tech Stack</h5>
         <ul className="flex flex-wrap">
@@ -43,7 +51,7 @@ const Project = (props: Props) => {
         <h5 className="text-l text-primary">Links</h5>
         <ul className="flex flex-wrap">
           <li className="text-md my-2 mr-1 flex w-max items-center rounded-lg bg-background-50 px-2 py-1 text-text">
-            <a href={props.githubLink}>
+            <a href={props.githubLink} target="_blank">
               <SvgIcon
                 iconName="GitHub"
                 size={24}
@@ -51,15 +59,17 @@ const Project = (props: Props) => {
               ></SvgIcon>
             </a>
           </li>
-          <li className="text-md my-2 mr-1 w-max rounded-lg  px-2 py-1 text-text">
-            <a href={props.liveLink}>
-              <SvgIcon
-                iconName="live"
-                size={24}
-                className="fill-secondary-950"
-              ></SvgIcon>
-            </a>
-          </li>
+          {props.liveLink && (
+            <li className="text-md my-2 mr-1 w-max rounded-lg  px-2 py-1 text-text">
+              <a href={props.liveLink} target="_blank">
+                <SvgIcon
+                  iconName="live"
+                  size={24}
+                  className="fill-secondary-950"
+                ></SvgIcon>
+              </a>
+            </li>
+          )}
         </ul>
       </div>
     </div>

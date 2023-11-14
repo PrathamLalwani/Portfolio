@@ -9,7 +9,6 @@ interface IProps {
 function SvgIcon(props: IProps) {
   const { iconName, size, className } = props;
   const { error, loading, SvgIcon } = useDynamicSvgImport(iconName);
-  console.log(SvgIcon);
   return (
     <>
       {loading && (
