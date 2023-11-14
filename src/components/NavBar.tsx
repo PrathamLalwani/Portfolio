@@ -30,10 +30,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <nav
-      style={{ backgroundColor: "var(--background-50)" }}
-      className=" sticky top-0 z-[1] flex h-20  w-full items-center justify-between bg-background p-1 px-7 shadow-md shadow-background backdrop-blur-xl md:p-5 md:px-12"
-    >
+    <nav className=" sticky top-0 z-[1] flex h-20  w-full items-center justify-between bg-background p-1 px-7 shadow-md shadow-background md:p-5 md:px-12">
       <HiMenuAlt4
         onClick={onMenuClickHandler}
         className="mr-2 inline-block min-h-[24px] min-w-[24px] flex-grow-0 sm:hidden"

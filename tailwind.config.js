@@ -22,9 +22,9 @@ export default {
           DEFAULT: "var(--text)",
         },
         background: {
-          50: "var(--background-50)",
+          50: "rgb(var(--background-50)/<alpha-value>)",
           100: "var(--background-100)",
-          200: "var(--background-200)",
+          200: "rgb(var(--background-200)/<alpha-value>)",
           300: "var(--background-300)",
           400: "var(--background-400)",
           500: "var(--background-500)",

@@ -17,7 +17,7 @@ const Project = (props: Props) => {
     new URL(`../assets/ProjectPictures/${name}`, import.meta.url).href;
 
   return (
-    <div className="flex h-fit w-fit flex-col items-center rounded-md bg-background-50 px-3 py-5 transition-all ease-in-out hover:shadow-2xl hover:shadow-accent sm:p-5 md:items-start">
+    <div className="flex h-fit w-fit flex-col items-center rounded-md border-2 border-slate-400 bg-background-50 bg-opacity-10 px-3 py-5 backdrop-blur-xl transition-all ease-in-out hover:shadow-2xl hover:shadow-accent sm:p-5 md:items-start">
       <div className="h-52 w-52 shrink-0 rounded-md sm:h-64 sm:w-64 md:h-96 md:w-96 ">
         <img
           src={getImgUrl(props.img_path)}
@@ -35,7 +35,7 @@ const Project = (props: Props) => {
           {props.techStack.map((tech) => (
             <li
               key={tech}
-              className="text-md my-2 mr-1 max-w-full rounded-lg bg-background-50  px-2 py-1 text-text"
+              className="text-md my-2 mr-1 max-w-full rounded-lg  px-2 py-1 text-text"
               title={tech}
             >
               {

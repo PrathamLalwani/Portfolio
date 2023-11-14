@@ -7,7 +7,7 @@ const ProjectSection = () => {
   return (
     <Element name="Projects">
       <section>
-        <h2 className="mb-3 text-5xl font-bold text-text">Projects</h2>
+        <h2 className="mb-12 text-5xl font-bold text-text">Projects</h2>
         {ProjectData.map((project) => {
           return (
             <Project
