@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 
-type Technologies = {
-  name: string;
-  icon: string;
-};
-const TechnologiesSection = () => {
+// type Technologies = {
+//   name: string;
+//   icon: string;
+// };
+// const TechnologiesSection = () => {
     
 
-  return <div>TechnologiesSection</div>;
-};
+//   return <div>TechnologiesSection</div>;
+// };
