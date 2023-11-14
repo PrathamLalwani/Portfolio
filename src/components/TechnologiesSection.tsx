@@ -15,7 +15,7 @@ const TechnologiesSection = () => {
         machine learning space. Always looking to learn new technologies and
         frameworks. Here are a few that I have worked with:
       </p>
-      <div className="flex w-full flex-shrink-0 flex-grow-0 basis-0 flex-row flex-wrap items-center justify-center p-2">
+      <div className="p-0md:p-2 flex w-full flex-shrink-0 flex-grow-0 basis-0 flex-row flex-wrap items-center justify-center">
         {TechnologiesData.map((technology) => (
           <Technology
             key={technology.name}
