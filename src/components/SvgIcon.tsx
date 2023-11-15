@@ -7,14 +7,19 @@ interface IProps {
   className?: string;
 }
 
-function SvgIcon(props: IProps) {
+const SvgIcon = (props: IProps) => {
   const { iconName, size, className } = props;
-  const [svgIcon, setSvgIcon] =
-    useState<React.FC<React.SVGProps<SVGElement>>>();
+
   const { error, loading, SvgIcon } = useDynamicSvgImport(iconName);
+  const [isMounted, setIsMounted] = useState(false);
   useEffect(() => {
-    setSvgIcon(SvgIcon);
-  }, [SvgIcon]);
+    if (SvgIcon) {
+      setIsMounted(true);
+    } else {
+      setIsMounted(false);
+    }
+  }, [SvgIcon, iconName]);
+
   return (
     <>
       {loading && (
@@ -27,13 +32,13 @@ function SvgIcon(props: IProps) {
           {iconName}
         </div>
       )}
-      {SvgIcon && svgIcon ? (
+      {SvgIcon && isMounted ? (
         <SvgIcon className={className} width={size} height={size} />
       ) : (
         iconName
       )}
     </>
   );
-}
+};
 
 export default SvgIcon;
