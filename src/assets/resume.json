@@ -47,6 +47,7 @@
     { "name": "WordPress", "type": "Other" },
     { "name": "TensorFlow", "type": "Libraries/Frameworks" },
     { "name": "PyTorch", "type": "Libraries/Frameworks" },
-    { "name": "LaTeX", "type": "Other" }
+    { "name": "LaTeX", "type": "Other" },
+    { "name": "Next.js", "type": "Libraries/Frameworks" }
   ]
 }
