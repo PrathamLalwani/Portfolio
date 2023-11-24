@@ -23,7 +23,7 @@ export default {
         },
         background: {
           50: "rgb(var(--background-50)/<alpha-value>)",
-          100: "var(--background-100)",
+          100: "rgb(var(--background-100)/<alpha-value>)",
           200: "rgb(var(--background-200)/<alpha-value>)",
           300: "var(--background-300)",
           400: "var(--background-400)",

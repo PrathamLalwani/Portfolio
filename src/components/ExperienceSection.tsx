@@ -13,26 +13,28 @@ type ExperienceType = {
 export const ExperienceSection: React.FC = () => {
   return (
     <Element name="Experience">
-      <section id="Experience" className="h-fit-content mt-20">
+      <section id="Experience" className="h-fit-content mb-20 mt-20">
         <div className="flex h-fit justify-between ">
           <div className="h-fit w-11/12">
             <h4 className="mb-5 py-2 text-5xl font-bold text-text">
               Experience
             </h4>
-            {ExperienceData.map(
-              (experience: ExperienceType, i: number): React.ReactNode => {
-                return (
-                  <Experience
-                    company={experience.company}
-                    duration={experience.duration}
-                    description={experience.description}
-                    title={experience.title}
-                    key={i}
-                    showBorder={i !== ExperienceData.length - 1}
-                  ></Experience>
-                );
-              },
-            )}
+            <div className=" w-full rounded-xl border-2 border-slate-400/10 p-5 backdrop-blur-xl lg:w-1/2 ">
+              {ExperienceData.map(
+                (experience: ExperienceType, i: number): React.ReactNode => {
+                  return (
+                    <Experience
+                      company={experience.company}
+                      duration={experience.duration}
+                      description={experience.description}
+                      title={experience.title}
+                      key={i}
+                      showBorder={i !== ExperienceData.length - 1}
+                    ></Experience>
+                  );
+                },
+              )}
+            </div>
           </div>
         </div>
       </section>

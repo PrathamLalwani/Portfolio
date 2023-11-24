@@ -23,7 +23,7 @@
     --accent: #1c9284;
 
     --background-50: 242 242 242;
-    --background-100: #e6e6e6;
+    --background-100: 230 230 230;
     --background-200: 204 204 204;
     --background-300: #b3b3b3;
     --background-400: #999999;
@@ -84,7 +84,7 @@
     --text-950: #faebeb;
 
     --background-50: 13 13 13;
-    --background-100: #1a1a1a;
+    --background-100: 26 26 26;
     --background-200: 51 51 51;
     --background-300: #4d4d4d;
     --background-400: #666666;
@@ -176,7 +176,7 @@
 
   .background {
     --s: 100px; /* control the size */
-    --c1: var(--background-100);
+    --c1: rgb(var(--background-100));
     --c2: rgb(var(--background-50));
 
     --_s: calc(2 * var(--s)) calc(2 * var(--s));

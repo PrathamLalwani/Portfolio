@@ -27,7 +27,7 @@ const Experience: React.FC<ExperienceProps> = (props: ExperienceProps) => {
               : "-translate-x-[1.7rem]"
           } absolute h-4 w-4 rounded-full bg-primary blur`}
         ></div>
-        <div className="inline-block w-full p-[-10px]  align-super md:w-1/2 ">
+        <div className="inline-block w-full p-[-10px]  align-super md:w-11/12 ">
           <h4 className="-translate-y-2   text-2xl text-text ">
             {props.title}
           </h4>
