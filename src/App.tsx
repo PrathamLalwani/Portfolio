@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import ProjectSection from "./components/ProjectSection";
 import { Element } from "react-scroll";
 import TechnologiesSection from "./components/TechnologiesSection";
+import OpenSourceContributionSection from "./components/OpenSourceContributions";
 function App() {
   return (
     <div className="background box-border bg-background text-text">
@@ -28,6 +29,7 @@ function App() {
         <ProjectSection></ProjectSection>
         <ExperienceSection></ExperienceSection>
         <TechnologiesSection></TechnologiesSection>
+        <OpenSourceContributionSection />
         <Contact></Contact>
       </main>
     </div>

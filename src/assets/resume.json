@@ -49,5 +49,10 @@
     { "name": "PyTorch", "type": "Libraries/Frameworks" },
     { "name": "LaTeX", "type": "Other" },
     { "name": "Next.js", "type": "Libraries/Frameworks" }
+  ],
+  "Contributions":[
+    {"repoName":"microsoft/vscode", "links": [""], "description":"Contributor to the vscode code editor" ,"githubLink":"https://github.com/microsoft/vscode","img_path":"https://opengraph.githubassets.com/f7c3a71d66ce7d1918d190151fd24685bcfe1b8fc7d84a4d0229184e0429da90/microsoft/vscode"},
+    {"repoName":"facebook/react", "links": [""], "description": "Contributor to the reactjs library","githubLink":"https://github.com/facebook/react","img_path":"https://opengraph.githubassets.com/48453eccb8073928f0b453e311620940b6b595bbc1de699e1745dc9ff09b6b36/facebook/react"}
+
   ]
 }

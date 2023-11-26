@@ -13,7 +13,7 @@ type ExperienceType = {
 export const ExperienceSection: React.FC = () => {
   return (
     <Element name="Experience">
-      <section id="Experience" className="h-fit-content mb-20 mt-20">
+      <section id="Experience" className="h-fit-content mb-10 mt-10">
         <div className="flex h-fit justify-between ">
           <div className="h-fit w-11/12">
             <h4 className="mb-5 py-2 text-5xl font-bold text-text">
