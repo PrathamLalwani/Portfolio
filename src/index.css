@@ -175,7 +175,7 @@
   }
 
   .background {
-    --s: 100px; /* control the size */
+    --s: 50px; /* control the size */
     --c1: rgb(var(--background-100));
     --c2: rgb(var(--background-50));
 

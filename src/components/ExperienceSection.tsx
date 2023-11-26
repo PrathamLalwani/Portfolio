@@ -1,7 +1,8 @@
 import React from "react";
-// import Experience from "./Experience";
+import OpenSourceContributionSection from "./OpenSourceContributions";
 import { Experience as ExperienceData } from "../assets/resume.json";
 import Experience from "./Experience";
+import TechnologiesSection from "./TechnologiesSection";
 import { Element } from "react-scroll";
 type ExperienceType = {
   company: string;
@@ -38,6 +39,8 @@ export const ExperienceSection: React.FC = () => {
           </div>
         </div>
       </section>
+      <OpenSourceContributionSection />
+      <TechnologiesSection></TechnologiesSection>
     </Element>
   );
 };

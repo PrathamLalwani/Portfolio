@@ -36,15 +36,14 @@ const NavBar: React.FC = () => {
         className="mr-2 inline-block min-h-[24px] min-w-[24px] flex-grow-0 sm:hidden"
       />
       <ul
-        className={`absolute ${
-          showNavItems
-            ? "left-0 top-0 flex items-center bg-background/80 p-10 text-2xl"
-            : "hidden"
-        }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
+        className={`absolute ${showNavItems
+          ? "left-0 top-0 flex items-center bg-background/80 p-10 text-2xl"
+          : "hidden"
+          }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
       >
         {NavItems.map((item) => (
           <Link
-            offset={-80}
+            offset={-500}
             duration={100}
             smooth={true}
             spy={true}

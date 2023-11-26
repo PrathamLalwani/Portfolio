@@ -87,9 +87,7 @@ const Contact = () => {
         </h2>
         <div className="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
           <p className="mb-8 text-center text-text  sm:text-xl lg:mb-16">
-            Fill out the contact form to start a conversation with me. Keen to
-            hear about new opportunities, discuss potential projects, or answer
-            any questions you might have.
+            Keen to hear about new opportunities, discuss potential projects, or answer any questions you might have.
           </p>
           <form action="#" onSubmit={handleSubmit} className="space-y-8">
             <div>
