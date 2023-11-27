@@ -21,6 +21,13 @@
       "githubLink": "https://github.com/PrathamLalwani/Portfolio",
       "liveLink": "https://prathamlalwani.me/",
       "img_path": "Portfolio-min.png"
+    },
+    {
+      "projectName": "Quick Chat",
+      "description": "Designed and Implemented a real-time chat application with a variety of features such as Group chat, Private chat, Last Active etc. ",
+      "techStack" : ["React", "Node.js", "Socket.io", "HTML5", "CSS3", "JavaScript"],
+      "githubLink" : "https://github.com/PrathamLalwani/ChatApplication",
+      "img_path" : "LoginPage-min.png"
     }
   ],
   "Technologies": [
