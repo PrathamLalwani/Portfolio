@@ -18,7 +18,7 @@ const SvgIcon = (props: IProps) => {
   useEffect(() => {
     setTimeout(() => {
       setRefreshed(true);
-    }, 1);
+    }, 500);
   }, []);
 
   const { error, loading, SvgIcon } = useDynamicSvgImport(iconName, {
