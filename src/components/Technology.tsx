@@ -12,6 +12,8 @@ const Technology = (props: Props) => {
       <SvgIcon
         iconName={props.iconName}
         size={60}
+        onCompleted={() => console.log}
+        onError={() => console.error}
         className="text-text  sm:mr-3 "
       />
       <span className="hidden text-lg text-text sm:inline-block">
