@@ -1,34 +1,45 @@
 /// <reference types="vite-plugin-svgr/client" />
 import React, { useEffect, useRef, useState } from "react";
 
-export function useDynamicSvgImport(iconName: string) {
-  const importedIconRef = useRef<React.FC<React.SVGProps<SVGElement>>>();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<unknown>(null);
+interface UseDynamicSVGImportOptions {
+  onCompleted?: (
+    name: string,
+    SvgIcon: React.FC<React.SVGProps<SVGSVGElement>> | undefined,
+  ) => void;
+  onError?: (err: unknown) => void;
+}
+export function useDynamicSvgImport(
+  iconName: string,
+  options: UseDynamicSVGImportOptions,
+) {
+  const ImportedIconRef = useRef<React.FC<React.SVGProps<SVGSVGElement>>>();
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<unknown>();
+
+  const { onCompleted, onError } = options;
   useEffect(() => {
     setLoading(true);
-    const importSvgIcon = async (): Promise<void> => {
+    const importIcon = async () => {
       try {
-        importedIconRef.current = (
+        ImportedIconRef.current = (
           await import(`../assets/techicons/${iconName}.svg`)
         ).default;
+        console.log(ImportedIconRef.current);
+        if (onCompleted) {
+          onCompleted(iconName, ImportedIconRef.current);
+        }
       } catch (err) {
+        if (onError) {
+          onError(err);
+        }
         setError(err);
-        console.error(err);
       } finally {
         setLoading(false);
-        if (importedIconRef.current === undefined) {
-          console.error(`Icon ${iconName} not found`);
-        } else {
-          console.log(`Icon ${iconName} loaded`);
-          console.log(importedIconRef.current);
-        }
       }
     };
+    importIcon();
+  }, [iconName, onCompleted, onError]);
 
-    importSvgIcon();
-  }, [iconName]);
-
-  return { error, loading, SvgIcon: importedIconRef.current };
+  return { error, loading, SvgIcon: ImportedIconRef.current };
 }

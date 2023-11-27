@@ -1,44 +1,42 @@
 /// <reference types="vite-plugin-svgr/client" />
-import { useEffect, useState } from "react";
 import { useDynamicSvgImport } from "./useDynamicSvgImport";
+import { useEffect, useState } from "react";
 interface IProps {
   iconName: string;
   size: number;
+  onCompleted: (
+    name: string,
+    SvgIcon: React.FC<React.SVGProps<SVGSVGElement>> | undefined,
+  ) => void;
+  onError: (err: unknown) => void;
   className?: string;
 }
 
 const SvgIcon = (props: IProps) => {
-  const { iconName, size, className } = props;
-
-  const { error, loading, SvgIcon } = useDynamicSvgImport(iconName);
-  const [isMounted, setIsMounted] = useState(false);
+  const { iconName, onCompleted, onError, size, className } = props;
+  const [refreshed, setRefreshed] = useState<boolean>(false);
   useEffect(() => {
-    if (SvgIcon) {
-      setIsMounted(true);
-    } else {
-      setIsMounted(false);
-    }
-  }, [SvgIcon, iconName]);
+    setTimeout(() => {
+      setRefreshed(true);
+    }, 1);
+  }, []);
 
-  return (
-    <>
-      {loading && (
-        <div className="h-8 w-8 animate-pulse rounded-full bg-slate-400">
-          {iconName}
-        </div>
-      )}
-      {error && (
-        <div className="h-8 w-8 animate-pulse rounded-full bg-slate-400">
-          {iconName}
-        </div>
-      )}
-      {SvgIcon && isMounted ? (
-        <SvgIcon className={className} width={size} height={size} />
-      ) : (
-        iconName
-      )}
-    </>
-  );
+  const { error, loading, SvgIcon } = useDynamicSvgImport(iconName, {
+    onCompleted,
+    onError,
+  });
+  if (error) {
+    return <p>error</p>;
+  }
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  if (SvgIcon) {
+    return (
+      refreshed && <SvgIcon width={size} height={size} className={className} />
+    );
+  }
+  return null;
 };
 
 export default SvgIcon;

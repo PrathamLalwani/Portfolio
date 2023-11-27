@@ -15,7 +15,7 @@ type Props = {
 const Project = (props: Props) => {
   const getImgUrl = (name: string) =>
     new URL(`../assets/ProjectPictures/${name}`, import.meta.url).href;
-  const [overflowActive, setOverflowActive] = useState<boolean>(false);
+  const [overflowActive, setOverflowActive] = useState<boolean>(true);
   const [showMore, setShowMore] = useState<boolean>(false);
   const overflowingText = useRef<HTMLSpanElement | null>(null);
   const checkOverflow = (textContainer: HTMLSpanElement | null): boolean => {
@@ -35,8 +35,7 @@ const Project = (props: Props) => {
       return;
     }
     setOverflowActive(false);
-  }, [overflowActive]);
-
+  }, [overflowActive, window.innerWidth]);
   return (
     <div className="m-5 flex h-full w-max flex-col items-center rounded-2xl border-2 border-slate-400/50 bg-background-50 bg-opacity-10 px-3 py-5 backdrop-blur-md transition-all ease-in-out sm:p-5 md:items-start">
       <div className="h-52 w-52 shrink-0 rounded-md sm:h-64 sm:w-64 md:h-96 md:w-96 ">
@@ -52,12 +51,12 @@ const Project = (props: Props) => {
           {" "}
           <span
             ref={overflowingText}
-            className={`relative line-clamp-2 w-full overflow-hidden overflow-ellipsis text-sm leading-6 text-text sm:text-base ${
+            className={`relative line-clamp-2 w-full overflow-hidden overflow-ellipsis text-sm text-text sm:text-base ${
               showMore
                 ? "line-clamp-none h-fit overflow-visible"
                 : overflowActive
-                ? "h-12"
-                : "h-[4.5rem]"
+                ? "h-10 sm:h-12"
+                : "h-10 sm:h-[4.5rem]"
             }`}
           >
             {props.description}
@@ -74,14 +73,16 @@ const Project = (props: Props) => {
           {props.techStack.map((tech) => (
             <li
               key={tech}
-              className="text-md my-2 mr-1 max-w-full rounded-lg  px-2 py-1 text-text"
+              className="text-md my-2 mr-1 w-max rounded-lg  px-2 py-1 text-text"
               title={tech}
             >
               {
                 <SvgIcon
                   key={tech}
                   iconName={tech}
-                  size={0}
+                  size={40}
+                  onError={console.error}
+                  onCompleted={console.log}
                   className=" h-5 w-5 fill-text sm:h-6 sm:w-6"
                 />
               }
@@ -95,6 +96,8 @@ const Project = (props: Props) => {
               <SvgIcon
                 iconName="GitHub"
                 size={24}
+                onError={console.error}
+                onCompleted={console.log}
                 className="fill-secondary-950"
               ></SvgIcon>
             </a>
@@ -105,6 +108,8 @@ const Project = (props: Props) => {
                 <SvgIcon
                   iconName="live"
                   size={24}
+                  onError={console.error}
+                  onCompleted={console.log}
                   className="fill-secondary-950"
                 ></SvgIcon>
               </a>
