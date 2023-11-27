@@ -6,9 +6,9 @@ import { Project as ProjectData } from "../assets/resume.json";
 const ProjectSection = () => {
   return (
     <Element name="Projects">
-      <section>
+      <section className="h-max">
         <h2 className="mb-12 text-5xl font-bold text-text">Projects</h2>
-        <div className="flex flex-row flex-wrap">
+        <div className="flex h-full flex-row flex-wrap">
           {ProjectData.map((project) => {
             return (
               <Project
