@@ -8,7 +8,7 @@ const ProjectSection = () => {
     <Element name="Projects">
       <section className="h-max">
         <h2 className="mb-12 text-5xl font-bold text-text">Projects</h2>
-        <div className="flex h-full flex-row flex-wrap">
+        <div className="flex h-max flex-row flex-wrap">
           {ProjectData.map((project) => {
             return (
               <Project
