@@ -57,7 +57,7 @@ const Project = (props: Props) => {
                 ? "line-clamp-none h-fit overflow-visible"
                 : overflowActive
                 ? "h-12"
-                : "h-16"
+                : "h-[4.5rem]"
             }`}
           >
             {props.description}
