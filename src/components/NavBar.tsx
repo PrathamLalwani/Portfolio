@@ -36,10 +36,11 @@ const NavBar: React.FC = () => {
         className="mr-2 inline-block min-h-[24px] min-w-[24px] flex-grow-0 sm:hidden"
       />
       <ul
-        className={`absolute ${showNavItems
-          ? "left-0 top-0 flex items-center bg-background/80 p-10 text-2xl"
-          : "hidden"
-          }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
+        className={`absolute ${
+          showNavItems
+            ? "left-0 top-0 flex items-center bg-background/80 p-10 text-2xl"
+            : "hidden"
+        }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
       >
         {NavItems.map((item) => (
           <Link
@@ -71,7 +72,9 @@ const NavBar: React.FC = () => {
           <div
             className={`ml-8 rounded-xl bg-gradient-to-br from-primary-500 to-accent-300 px-4 py-2 text-text `}
           >
-            <a href="#">Resume</a>
+            <a href="src/assets/Pratham_Lalwani_Resume.pdf" target="_blank">
+              Resume
+            </a>
           </div>
         </li>
       </ul>
