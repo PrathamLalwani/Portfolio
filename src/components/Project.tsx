@@ -1,6 +1,6 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import SvgIcon from "./SvgIcon";
 type Props = {
   children?: React.ReactNode;
@@ -18,6 +18,7 @@ const Project = (props: Props) => {
   const [overflowActive, setOverflowActive] = useState<boolean>(true);
   const [showMore, setShowMore] = useState<boolean>(false);
   const overflowingText = useRef<HTMLSpanElement | null>(null);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
   const checkOverflow = (textContainer: HTMLSpanElement | null): boolean => {
     if (textContainer)
       return (
@@ -29,13 +30,23 @@ const Project = (props: Props) => {
   const onShowMore = () => {
     setShowMore((prev) => !prev);
   };
+  const handleWindowResize = useCallback(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [handleWindowResize]);
   useEffect(() => {
     if (checkOverflow(overflowingText.current)) {
       setOverflowActive(true);
       return;
     }
     setOverflowActive(false);
-  }, [overflowActive, window.innerWidth]);
+  }, [overflowActive, windowSize]);
   return (
     <div className="m-5 flex h-full w-max flex-col items-center rounded-2xl border-2 border-slate-400/50 bg-background-50 bg-opacity-10 px-3 py-5 backdrop-blur-md transition-all ease-in-out sm:p-5 md:items-start">
       <div className="h-52 w-52 shrink-0 rounded-md sm:h-64 sm:w-64 md:h-96 md:w-96 ">
@@ -56,7 +67,7 @@ const Project = (props: Props) => {
                 ? "line-clamp-none h-fit overflow-visible"
                 : overflowActive
                 ? "h-10 sm:h-12"
-                : "h-10 sm:h-[4.5rem]"
+                : "h-14 sm:h-[4.5rem]"
             }`}
           >
             {props.description}

@@ -25,9 +25,8 @@ export function useDynamicSvgImport(
         ImportedIconRef.current = (
           await import(`../assets/techicons/${iconName}.svg`)
         ).default;
-        console.log(ImportedIconRef.current);
         if (onCompleted) {
-          onCompleted(iconName, ImportedIconRef.current);
+          // onCompleted(iconName, ImportedIconRef.current);
         }
       } catch (err) {
         if (onError) {

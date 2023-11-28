@@ -15,16 +15,17 @@ interface IProps {
 const SvgIcon = (props: IProps) => {
   const { iconName, onCompleted, onError, size, className } = props;
   const [refreshed, setRefreshed] = useState<boolean>(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setRefreshed(true);
-    }, 500);
-  }, []);
-
   const { error, loading, SvgIcon } = useDynamicSvgImport(iconName, {
     onCompleted,
     onError,
   });
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setRefreshed(true);
+    }, 500);
+    return () => clearTimeout(timeout);
+  }, [SvgIcon]);
+
   if (error) {
     return <p>error</p>;
   }
