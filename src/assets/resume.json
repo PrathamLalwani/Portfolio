@@ -28,6 +28,13 @@
       "techStack" : ["React", "Node.js", "Socket.io", "HTML5", "CSS3", "JavaScript"],
       "githubLink" : "https://github.com/PrathamLalwani/ChatApplication",
       "img_path" : "LoginPage-min.png"
+    },
+    {
+    "projectName" : "Pandemic Simulator",
+      "description": "Simulation of pandemic using a set of Ordinary Differential Equations created by me. The equations were solved numerically using Python and Gekko.",
+      "techStack": ["HTML5", "CSS3", "JavaScript", "Python"],
+      "githubLink" : "https://github.com/PrathamLalwani/pandemic_simulator",
+      "img_path" : "PandemicSimulator-min.png"
     }
   ],
   "Technologies": [
