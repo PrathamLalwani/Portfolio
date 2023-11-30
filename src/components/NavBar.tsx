@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { Link } from "react-scroll";
+import Resume from "../assets/Pratham_Lalwani_Resume.pdf";
 const NavBar: React.FC = () => {
   const NavItems = ["Home", "Projects", "Experience", "Contact"];
   const [showNavItems, setShowNavItems] = useState(false);
@@ -72,7 +73,7 @@ const NavBar: React.FC = () => {
           <div
             className={`ml-8 rounded-xl bg-gradient-to-br from-primary-500 to-accent-300 px-4 py-2 text-text `}
           >
-            <a href="src/assets/Pratham_Lalwani_Resume.pdf" target="_blank">
+            <a href={Resume} target="_blank">
               Resume
             </a>
           </div>

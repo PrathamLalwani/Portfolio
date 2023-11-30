@@ -6,6 +6,7 @@ import ProjectSection from "./components/ProjectSection";
 import { Element } from "react-scroll";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { FiGithub } from "react-icons/fi";
+
 function App() {
   return (
     <div className="background box-border bg-background text-text">
