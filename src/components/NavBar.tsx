@@ -45,7 +45,7 @@ const NavBar: React.FC = () => {
       >
         {NavItems.map((item) => (
           <Link
-            offset={-500}
+            offset={-100}
             duration={100}
             smooth={true}
             spy={true}
