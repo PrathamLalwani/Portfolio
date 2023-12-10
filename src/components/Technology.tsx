@@ -7,16 +7,17 @@ const Technology = (props: Props) => {
   return (
     <div
       title={props.iconName}
-      className="m-2 flex h-max w-max shrink-0 flex-grow-0 basis-0 items-center justify-center rounded-full bg-background-200 bg-opacity-30 p-4 backdrop-blur-sm"
+      className="h-30 m-2 flex w-max shrink-0 flex-grow-0 basis-0 flex-col items-center justify-center rounded-lg bg-background-200 p-4 hover:shadow-lg hover:shadow-primary "
     >
       <SvgIcon
         iconName={props.iconName}
         size={60}
         onCompleted={() => console.log}
         onError={() => console.error}
-        className="text-text  sm:mr-3 "
+        className="mb-2 text-text"
       />
-      <span className="hidden text-lg text-text sm:inline-block">
+      <span className="line-clamp-1 hidden h-min w-max text-lg text-text sm:block">
+        {" "}
         {props.iconName}
       </span>
     </div>

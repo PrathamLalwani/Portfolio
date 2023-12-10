@@ -44,22 +44,22 @@ const NavBar: React.FC = () => {
         }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
       >
         {NavItems.map((item) => (
-          <Link
-            offset={-100}
-            duration={100}
-            smooth={true}
-            spy={true}
-            to={`${item}`}
-            activeClass="link-active"
-            className="relative mr-5 flex w-fit items-center justify-center"
-            key={item}
-          >
-            <li className="  font-bold md:text-lg">
-              <h1 className="link" onClick={onMenuClickHandler}>
+          <li className="relative mr-5 flex w-fit items-center justify-center md:text-lg">
+            <h1 className="link" onClick={onMenuClickHandler}>
+              <Link
+                duration={100}
+                smooth={true}
+                offset={-100}
+                spy={true}
+                to={`${item}`}
+                activeClass="link-active"
+                className=""
+                key={item}
+              >
                 {item}
-              </h1>
-            </li>
-          </Link>
+              </Link>
+            </h1>
+          </li>
         ))}
       </ul>
       <ul className="flex items-center">

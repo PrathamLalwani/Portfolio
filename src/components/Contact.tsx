@@ -81,13 +81,14 @@ const Contact = () => {
 
   return (
     <Element name="Contact">
-      <section className=" pb-10">
+      <section className="h-[calc(100vh-6rem)]">
         <h2 className="mb-4 text-5xl font-extrabold tracking-tight text-text">
           Contact Me
         </h2>
         <div className="mx-auto max-w-screen-md px-4 py-8 lg:py-16">
           <p className="mb-8 text-center text-text  sm:text-xl lg:mb-16">
-            Keen to hear about new opportunities, discuss potential projects, or answer any questions you might have.
+            Keen to hear about new opportunities, discuss potential projects, or
+            answer any questions you might have.
           </p>
           <form action="#" onSubmit={handleSubmit} className="space-y-8">
             <div>
