@@ -11,7 +11,7 @@ const TechnologiesSection = () => {
         <div className="ml-5 inline-block items-center text-center align-middle text-xl "></div>
       </div>
       <p className="mb-5 pl-2 text-lg leading-8 text-text">
-        I have worked with a range of technologies in the web development and
+        I have worked with a range of technologies in web development and
         machine learning space. Always looking to learn new technologies and
         frameworks. Here are a few that I have worked with:
       </p>
