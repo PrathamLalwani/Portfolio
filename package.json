@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@aws-sdk/client-amplify": "^3.441.0",
+    "@types/react-google-recaptcha": "^2.1.8",
     "@types/react-scroll": "^1.8.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-icons": "^4.10.1",
     "react-scroll": "^1.9.0",
     "vite-plugin-svgr": "^4.1.0"

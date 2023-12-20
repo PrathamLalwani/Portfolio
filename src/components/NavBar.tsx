@@ -44,7 +44,10 @@ const NavBar: React.FC = () => {
         }  z-10 mt-20  h-[calc(100vh-5rem)] w-full flex-col justify-around transition-all sm:relative sm:m-0 sm:flex sm:h-full sm:flex-row sm:justify-start`}
       >
         {NavItems.map((item) => (
-          <li className="relative mr-5 flex w-fit items-center justify-center md:text-lg">
+          <li
+            key={item}
+            className="relative mr-5 flex w-fit items-center justify-center md:text-lg"
+          >
             <h1 className="link" onClick={onMenuClickHandler}>
               <Link
                 duration={100}

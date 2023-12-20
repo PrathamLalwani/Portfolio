@@ -1,11 +1,12 @@
 // type Props = {}
-import { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import { Element } from "react-scroll";
-
+import ReCAPTCHA from "react-google-recaptcha";
 type FormInput = {
   email: string;
   name: string;
   message: string;
+  token: string;
 };
 
 type FormInputAction = {
@@ -22,15 +23,17 @@ const Contact = () => {
         return { ...state, name: action.payload };
       case "MESSAGE":
         return { ...state, message: action.payload };
+      case "TOKEN":
+        return { ...state, token: action.payload };
       default:
         return state;
     }
   };
-
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   async function postData() {
-    const apiName =
-      "https://jdklw0egg4.execute-api.ca-central-1.amazonaws.com/prod";
+    const apiName = import.meta.env.VITE_API;
     const path = "/contact-me";
+    console.log(formInput);
     const myInit = {
       method: "POST",
       body: JSON.stringify(formInput), // replace this with attributes you need
@@ -48,6 +51,7 @@ const Contact = () => {
       })
       .catch((error) => {
         console.error(error);
+        return error;
       });
   }
 
@@ -57,6 +61,7 @@ const Contact = () => {
     email: "",
     name: "",
     message: "",
+    token: "",
   });
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,15 +73,29 @@ const Contact = () => {
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     dispatch({ type: "MESSAGE", payload: e.target.value });
   };
-
+  const handleRecaptchaChange = () => {
+    dispatch({
+      type: "TOKEN",
+      payload: recaptchaRef.current?.getValue() ?? "",
+    });
+  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    JSON.stringify(formInput);
-    await postData();
-    alert("Thank you for your message. I will get back to you soon!");
+    console.log();
+    try {
+      const response = await postData();
+      console.log(response);
+      if (response.body.statusCode == 200) {
+        alert("Thank you for your message. I will get back to you soon!");
+      }
+    } catch (e) {
+      alert("Send Message failed. Please try again later.");
+    }
+
     dispatch({ type: "EMAIL", payload: "" });
     dispatch({ type: "NAME", payload: "" });
     dispatch({ type: "MESSAGE", payload: "" });
+    dispatch({ type: "TOKEN", payload: "" });
   };
 
   return (
@@ -142,8 +161,14 @@ const Contact = () => {
                 placeholder="Your message"
                 onChange={handleMessageChange}
                 value={formInput.message}
+                required
               ></textarea>
             </div>
+            <ReCAPTCHA
+              sitekey={import.meta.env.VITE_SITE_KEY}
+              onChange={handleRecaptchaChange}
+              ref={recaptchaRef}
+            />
             <button
               type="submit"
               className=":ring-primary-800 rounded-lg bg-primary-300 px-5 py-3 text-center text-sm font-medium text-text hover:bg-primary-800 focus:outline-none  focus:ring-4 focus:ring-primary-300 sm:w-fit"
