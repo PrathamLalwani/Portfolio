@@ -27,10 +27,8 @@ jobs:
           npm install
           npm run build
         env:
-          VITE_KEY: ${{ secrets.VITE_KEY }}
+          VITE_API: ${{ secrets.VITE_API }}
           VITE_SITE_KEY: ${{ secrets.VITE_SITE_KEY }}
-        
-        
 
       - name: Push
         uses: s0/git-publish-subdir-action@develop
