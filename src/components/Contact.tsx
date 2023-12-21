@@ -81,23 +81,27 @@ const Contact = () => {
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log();
-    try {
-      const response = await postData();
-      console.log(response);
-      if (response.statusCode == 200) {
-        alert("Thank you for your message. I will get back to you soon!");
-      } else {
-        alert("Send Message Failed. Please try again later");
+    if (recaptchaRef.current?.getValue()) {
+      try {
+        const response = await postData();
+        console.log(response);
+        if (response.statusCode == 200) {
+          alert("Thank you for your message. I will get back to you soon!");
+        } else {
+          alert("Send Message Failed. Please try again later");
+        }
+      } catch (e) {
+        alert("Send Message failed. Please try again later.");
       }
-    } catch (e) {
-      alert("Send Message failed. Please try again later.");
-    }
 
-    dispatch({ type: "EMAIL", payload: "" });
-    dispatch({ type: "NAME", payload: "" });
-    dispatch({ type: "MESSAGE", payload: "" });
-    dispatch({ type: "TOKEN", payload: "" });
+      dispatch({ type: "EMAIL", payload: "" });
+      dispatch({ type: "NAME", payload: "" });
+      dispatch({ type: "MESSAGE", payload: "" });
+      dispatch({ type: "TOKEN", payload: "" });
+      recaptchaRef.current.reset();
+    } else {
+      alert("Please finish the captcha");
+    }
   };
 
   return (
